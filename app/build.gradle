@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "org.android.immortal.wedio"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 24
         versionCode 1
         versionName "1.0"
@@ -33,6 +33,12 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    //引入native libary
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
         }
     }
 }
