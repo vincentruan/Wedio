@@ -6,8 +6,9 @@ android {
 
     defaultConfig {
         applicationId "org.android.immortal.wedio"
-        minSdkVersion 16
-        targetSdkVersion 23
+        minSdkVersion 19
+        // targetSdkVersion升到23会有E/linker has text relocations的异常
+        targetSdkVersion 22
         versionCode 1
         versionName "1.0"
     }
@@ -33,14 +34,15 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
     }
     //引入native libary
-    sourceSets {
+    /*sourceSets {
         main {
             jniLibs.srcDirs = ['libs']
         }
-    }
+    }*/
 }
 
 dependencies {
